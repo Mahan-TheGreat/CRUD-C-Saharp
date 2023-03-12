@@ -2,12 +2,6 @@
 .vs/
 
 # Ignore obj directory
-/JWTAuthentication/obj/
-/JWTAuthentication/bin/
-/Website.UI/obj/Debug
-
- 
-
 /obj/Debug/net6.0
 /bin/Debug/net6.0
 /obj
