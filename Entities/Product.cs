@@ -8,7 +8,7 @@ public class Product
     public decimal price { get; set; }
     public int quantity { get; set; }
     public bool isDiscountApplicable { get; set; }
-    public decimal percentDiscount { get; set;}
-    public decimal priceDiscount { get; set; }
+    public decimal? percentDiscount { get; set;}
+    public decimal? priceDiscount { get; set; }
     public bool isActive { get; set; }
 }
