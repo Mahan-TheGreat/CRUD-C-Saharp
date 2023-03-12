@@ -43,7 +43,6 @@ public class DatabaseInitializer
                 quantity = 1,
                 isDiscountApplicable = true,
                 percentDiscount = 10,
-                priceDiscount = 100,
                 isActive = true
 
             }
