@@ -1,0 +1,11 @@
+# Ignore Visual Studio files
+.vs/
+
+# Ignore obj directory
+/JWTAuthentication/obj/
+/JWTAuthentication/bin/
+/Website.UI/obj/Debug
+
+ 
+
+/obj/Debug/net6.0
