@@ -15,13 +15,13 @@ public class ProductsController : ControllerBase
         _Context = Context;
     }
 
-    [HttpGet]
+    [HttpGet("GetProduct")]
     public async Task<List<Product>> GetProducts()
     {
         return await _Context.Products.ToListAsync();
     }
 
-    [HttpPost]
+    [HttpPost("AddProduct")]
     public async Task<IActionResult> PostProduct(Product p)
     {
         _Context.Products.Add(p);
@@ -33,7 +33,7 @@ public class ProductsController : ControllerBase
         });
     }
 
-    [HttpPut]
+    [HttpPut("EditProduct")]
     public async Task<IActionResult> EditProduct(int id, Product editedProduct)
     {
         var Product = await _Context.Products.FirstAsync(x => x.id == id);
