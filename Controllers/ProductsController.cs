@@ -33,7 +33,7 @@ public class ProductsController : ControllerBase
         });
     }
 
-    [HttpPut("EditProduct")]
+    [HttpPut("EditProduct/{id}")]
     public async Task<IActionResult> EditProduct(int id, Product editedProduct)
     {
         var Product = await _Context.Products.FirstAsync(x => x.id == id);
