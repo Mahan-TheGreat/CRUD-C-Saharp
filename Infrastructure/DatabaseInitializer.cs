@@ -1,49 +1,70 @@
 ﻿using CRUD.Entities;
+using static System.Net.WebRequestMethods;
 
 namespace CRUD.Infrastructure;
 
 public class DatabaseInitializer
 {
-    public readonly IApplicationDBContext _context;
+    private readonly IApplicationDBContext _context;
+    private readonly IWebHostEnvironment _env;
 
-	public DatabaseInitializer(IApplicationDBContext context)
+
+	public DatabaseInitializer(IApplicationDBContext context,IWebHostEnvironment env)
 	{
 		_context = context;
+        _env = env;
 	}
 
 	public async Task SeedProductsData()
 	{
+        Console.Write(_env.WebRootPath);
         var Products = new List<Product>()
         {
             new Product()
             {
-                name = "Product1",
-                description = "Lorem Ipsum",
-                price = 20,
-                quantity = 2,
-                isDiscountApplicable = false,
-                isActive = true
+
+                Name = "Camera",
+                ImagePath = "/images/camera.jpeg",
+                Description = "Lorem Ipsum",
+                Price = 20,
+                Quantity = 2,
+                IsDiscountApplicable = false,
+                IsActive = true
 
             },
             new Product()
             {
-                name = "Product2",
-                description = "Lorem Ipsum 2",
-                price = 40,
-                quantity = 5,
-                isDiscountApplicable = false,
-                isActive = true
-
+                Name = "Lens",
+                ImagePath = "/images/lens.jpeg",
+                Description = "Lorem Ipsum 2",
+                Price = 40,
+                Quantity = 5,
+                IsDiscountApplicable = false,
+                IsActive = true
+                        
             },
             new Product()
             {
-                name = "Product 3",
-                description = "Lorem Ipsum 3",
-                price = 1000,
-                quantity = 1,
-                isDiscountApplicable = true,
-                percentDiscount = 10,
-                isActive = true
+                Name = "Coke",
+                ImagePath =  "/images/coke.jpeg",
+                Description = "Lorem Ipsum 3",
+                Price = 1000,
+                Quantity = 1,
+                IsDiscountApplicable = true,
+                PercentDiscount = 10,
+                IsActive = true
+
+            },
+             new Product()
+             {
+                Name = "Memory Card",
+                ImagePath =  "/images/memorycard.jpeg",
+                Description = "Lorem Ipsum 3",
+                Price = 800,
+                Quantity = 1,
+                IsDiscountApplicable = true,
+                PercentDiscount = 20,
+                IsActive = true
 
             }
         };
